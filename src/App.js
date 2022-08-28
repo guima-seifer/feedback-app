@@ -7,13 +7,10 @@ function App() {
         {id: 3, text: 'Comment three'},
         ]
 
-    //wrap with a div, because only one element can be returned
-    return (
-        <div className='container'>
-        <h1>{title.toUpperCase()}</h1>
-        <p>{body}</p>
+        const loading = true
+        const showComments  = true
 
-        <div className='comments'>
+        const commentBlock =  (<div className='comments'>
         <h3>Comments ({comments.length})</h3>
         <ul>
             {comments.map((comment, index) => (
@@ -21,8 +18,15 @@ function App() {
             ))}
         </ul>
         <p></p>
+        </div>)
 
-        </div>
+    //wrap with a div, because only one element can be returned
+    return (
+        <div className='container'>
+        <h1>{title.toUpperCase()}</h1>
+        <p>{body}</p>
+
+        {showComments && commentBlock}
 
         </div>
     )

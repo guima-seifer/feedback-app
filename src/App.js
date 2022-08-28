@@ -1,34 +1,22 @@
+import Header from './components/Header'
+import FeedbackData from './data/FeedbackData'
+import { useState } from 'react'
+import FeedbackList from './components/FeedbackList'
+
 function App() {
-    const title = 'Feedback app'
-    const body = ''
-    const comments = [
-        {id: 1, text: 'Comment one'},
-        {id: 2, text: 'Comment two'},
-        {id: 3, text: 'Comment three'},
-        ]
+    const [feedback, setFeedback] = useState(FeedbackData)
+    const deleteFeedback = (id) => {
 
-        const loading = true
-        const showComments  = true
-
-        const commentBlock =  (<div className='comments'>
-        <h3>Comments ({comments.length})</h3>
-        <ul>
-            {comments.map((comment, index) => (
-                <li key={index}>{comment.text}</li>
-            ))}
-        </ul>
-        <p></p>
-        </div>)
-
+    }
+    
     //wrap with a div, because only one element can be returned
     return (
+        <>
+        <Header />
         <div className='container'>
-        <h1>{title.toUpperCase()}</h1>
-        <p>{body}</p>
-
-        {showComments && commentBlock}
-
+        <FeedbackList feedback={feedback} handleDelete={deleteFeedback}/>
         </div>
+        </>
     )
-}
+} 
 export default App

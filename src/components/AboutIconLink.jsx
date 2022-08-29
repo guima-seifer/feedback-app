@@ -5,7 +5,7 @@ import React from 'react'
 
 function AboutIconLink() {
   return (
-    <div className="about-link">
+    <div className='about-link'>
     <Link to='/about'>
         <FaQuestion size={30} />
         </Link>

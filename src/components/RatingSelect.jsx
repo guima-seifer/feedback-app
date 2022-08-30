@@ -4,7 +4,7 @@ function RatingSelect({select, selected}) {
     //typeof e.currentTarget.value is string
     //typeof +e.currentTarget.value is number
     select(+e.currentTarget.value)
-  }
+  } 
 
   return (
     <ul className='rating'>
